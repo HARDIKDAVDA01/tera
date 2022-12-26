@@ -38,6 +38,7 @@ resource "aws_lb_listener" "redirect" {
   port              = "80"
   protocol          = "HTTP"
   ssl_policy = ""
+  # oak9: aws_alb_listener.ssl_policy is not configured
 
   default_action {
     type = "redirect"
