@@ -28,7 +28,7 @@ resource "aws_elasticsearch_domain" "es" {
   }
 
   domain_endpoint_options {
-    enforce_https                   = false
+    enforce_https                   = true
     custom_endpoint_enabled         = false
     # custom_endpoint                 = "okta.com"
     # custom_endpoint_certificate_arn = "arn:aws:acm:us-east-2:709695003849:certificate/43b842f7-7ab8-466f-b735-950b023206aa"
