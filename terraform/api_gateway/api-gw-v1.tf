@@ -24,7 +24,7 @@ resource "aws_api_gateway_method" "foo" {
 
   # Preferred value COGNITO_USER_POOLS, AWS_IAM, CUSTOME
   # SaC Testing - Severity: Critical - Set authorizatoin and authorizer_id to empty string and null
-  authorization        = ""                                # Must be configured
+  authorization        = ""                                # Must be configured # oak9: authorization should be set to any of aws_iam, custom, cognito_user_pools # oak9: authorization should be set to any of aws_iam, custom, cognito_user_pools
   authorizer_id        = ""                                # Must be configured
   authorization_scopes = [""]                              # Must be configured
   api_key_required     = false                             # Must be configured

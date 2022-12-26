@@ -9,7 +9,7 @@ resource "aws_elasticsearch_domain" "es" {
     log_type                 = "INDEX_SLOW_LOGS"
   }
   node_to_node_encryption {
-    enabled = false
+    enabled = true
   }
 
   cognito_options {
@@ -28,7 +28,7 @@ resource "aws_elasticsearch_domain" "es" {
   }
 
   domain_endpoint_options {
-    enforce_https                   = false
+    enforce_https                   = true
     custom_endpoint_enabled         = false
     # custom_endpoint                 = "okta.com"
     # custom_endpoint_certificate_arn = "arn:aws:acm:us-east-2:709695003849:certificate/43b842f7-7ab8-466f-b735-950b023206aa"
@@ -45,13 +45,13 @@ resource "aws_elasticsearch_domain" "es" {
   }
 
   encrypt_at_rest {
-    enabled    = false
+    enabled    = true
     kms_key_id = ""
   }
   
   advanced_security_options {
     enabled                        = true
-    internal_user_database_enabled = true
+    internal_user_database_enabled = false
     master_user_options {
       master_user_arn      = ""
       master_user_name     = var.username
