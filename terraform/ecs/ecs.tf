@@ -68,6 +68,7 @@ resource "aws_ecs_service" "test-service" {
   launch_type     = "FARGATE"
   network_configuration {
     security_groups  = []
+    # oak9: aws_ecs_service.network_configuration.security_groups is not configured
     subnets          = aws_subnet.private.*.id
     assign_public_ip = "enabled"
   }
