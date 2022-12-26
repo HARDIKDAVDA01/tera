@@ -36,7 +36,7 @@ resource "aws_lb_listener" "redirect" {
   load_balancer_arn = aws_lb.application.arn
   
   port              = "80"
-  protocol          = "HTTP"
+  protocol          = "HTTP" # oak9: protocol should be set to any of https, tls
   ssl_policy = ""
   # oak9: aws_alb_listener.ssl_policy is not configured
 
