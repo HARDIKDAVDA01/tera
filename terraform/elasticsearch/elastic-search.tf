@@ -45,7 +45,7 @@ resource "aws_elasticsearch_domain" "es" {
   }
 
   encrypt_at_rest {
-    enabled    = false
+    enabled    = true
     kms_key_id = ""
   }
   
